@@ -1,7 +1,7 @@
-import { Card, Button, Rate, Badge } from 'antd';
+import { Card, Button, Rate } from 'antd';
 import { ShoppingCartOutlined, HeartOutlined } from '@ant-design/icons';
 import type { Product } from '../../types/ProductInterface';
-import { useCartStore } from '../../store/cartStore';
+import { useAddToCart } from '../../hooks/useCart';
 import { Link } from 'react-router-dom';
 
 interface ProductCardProps {
@@ -10,12 +10,12 @@ interface ProductCardProps {
 }
 
 export default function ProductCard({ product, className = '' }: ProductCardProps) {
-  const addItem = useCartStore(state => state.addItem);
+  const { mutate: addItem } = useAddToCart();
 
   const handleAddToCart = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    addItem(product, 1);
+    addItem({ product, quantity: 1 });
   };
 
   return (
@@ -39,22 +39,21 @@ export default function ProductCard({ product, className = '' }: ProductCardProp
                 e.stopPropagation();
               }}
             />
-            <Badge.Ribbon
-              text={product.category}
-              className="absolute bottom-3 left-3 glass-effect px-2 py-1 rounded-full text-xs font-medium text-gray-700"
-            />
           </div>
         }
         actions={[
-          <Button
-            key="cart"
-            type="primary"
-            icon={<ShoppingCartOutlined />}
-            className="gradient-bg border-0 font-medium"
-            onClick={handleAddToCart}
-          >
-            Add to Cart
-          </Button>,
+          <div className="flex flex-col gap-2 px-4">
+            <Button
+              key="cart"
+              type="primary"
+              icon={<ShoppingCartOutlined />}
+              className="gradient-bg border-0 font-medium w-full"
+              onClick={handleAddToCart}
+            >
+              Add to Cart
+            </Button>
+          </div>
+
         ]}
       >
         <Card.Meta

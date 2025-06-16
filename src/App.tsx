@@ -9,7 +9,7 @@ import { Login } from './pages/LoginPage'
 import { Register } from './pages/RegisterPage'
 import ProductListPage from './pages/ProductListPage'
 import ProductPage from './pages/ProductPage'
-
+import CartPage from './pages/CartPage'
 
 const { Content } = Layout;
 
@@ -35,6 +35,7 @@ function App() {
                 <Route path="/" element={<HomePage />} />
                 <Route path="/products" element={<ProductListPage />} />
                 <Route path="/product/:id" element={<ProductPage />} />
+                <Route path="/cart" element={<CartPage />} />
               </Routes>
             </Content>
             <Footer />

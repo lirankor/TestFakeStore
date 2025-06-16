@@ -7,6 +7,6 @@ This is the work proccess used to create the project.
 5. created config files for tailwindcss, postcss, autoprefixer and vite
 6. Setup basic structure for the project
 7. prepared inital autantication flow
-8. import UI components from replit AI to use in the project
+8. import UI components and pages from replit AI to use in the project
 9. install react-query and use it in the project
-10.
+10. Creat reactQuery hooks seperated by model
