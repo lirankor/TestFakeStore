@@ -10,6 +10,7 @@ import { Register } from './pages/RegisterPage'
 import ProductListPage from './pages/ProductListPage'
 import ProductPage from './pages/ProductPage'
 import CartPage from './pages/CartPage'
+import CheckoutPage from './pages/CheckoutPage'
 
 const { Content } = Layout;
 
@@ -26,7 +27,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <AntApp>
         <BrowserRouter>
-          <Layout className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-indigo-100">
+          <Layout className="min-h-screen bg-linear-to-br from-blue-50 via-purple-50 to-indigo-100">
             <Header />
             <Content className="flex-1">
               <Routes>
@@ -36,6 +37,7 @@ function App() {
                 <Route path="/products" element={<ProductListPage />} />
                 <Route path="/product/:id" element={<ProductPage />} />
                 <Route path="/cart" element={<CartPage />} />
+                <Route path="/checkout" element={<CheckoutPage />} />
               </Routes>
             </Content>
             <Footer />

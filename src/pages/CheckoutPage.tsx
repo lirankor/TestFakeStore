@@ -253,7 +253,7 @@ export default function CheckoutPage() {
                         htmlType="submit"
                         loading={loading}
                         size="large"
-                        className="w-full bg-gradient-to-r from-green-600 to-green-700 border-0 font-semibold"
+                        className="w-full bg-linear-to-r from-green-600 to-green-700 border-0 font-semibold"
                       >
                         Place Order
                       </Button>
@@ -318,22 +318,20 @@ export default function CheckoutPage() {
               <h2 className="text-xl font-semibold text-gray-900 mb-6">Order Summary</h2>
 
               {/* Order Items */}
-              <div className="space-y-3 mb-6">
+              <div className="space-y-2 mb-6">
                 {items.map((item) => (
-                  <div key={item.id} className="flex items-center gap-3">
+                  <div key={item.product.id} className="flex gap-3 justify-between overflow-hidden">
                     <img
                       src={item.product.image}
                       alt={item.product.title}
-                      className="w-12 h-12 object-cover rounded-lg"
+                      className="w-14 h-14 object-cover rounded-lg"
                     />
-                    <div className="flex-1">
+                    <div className="flex-1 flex flex-col">
                       <div className="text-sm font-medium text-gray-900 truncate">
                         {item.product.title}
                       </div>
                       <div className="text-xs text-gray-600">Qty: {item.quantity}</div>
-                    </div>
-                    <div className="text-sm font-medium text-gray-900">
-                      ${(item.product.price * item.quantity).toFixed(2)}
+                      <div className="text-xs text-gray-600">${(item.product.price * item.quantity).toFixed(2)}</div>
                     </div>
                   </div>
                 ))}

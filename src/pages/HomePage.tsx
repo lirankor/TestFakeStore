@@ -145,7 +145,7 @@ export default function HomePage() {
                     className="glass-card text-center hover-scale cursor-pointer h-full"
                     bodyStyle={{ padding: '24px' }}
                   >
-                    <div className={`w-16 h-16 bg-gradient-to-r ${category.color} rounded-2xl flex items-center justify-center mx-auto mb-4`}>
+                    <div className={`w-16 h-16 bg-linear-to-r ${category.color} rounded-2xl flex items-center justify-center mx-auto mb-4`}>
                       {category.icon}
                     </div>
                     <h3 className="font-semibold text-gray-900 mb-2">{category.title}</h3>
@@ -193,14 +193,14 @@ export default function HomePage() {
       {/* Newsletter Signup */}
       <section className="py-16">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <Card className="glass-card p-12">
+          <Card className="glass-card p-12 flex flex-col items-center justify-center">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Stay Updated</h2>
             <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
               Get the latest tech accessories, exclusive deals, and product launches delivered to your inbox.
             </p>
 
             <Form
-              layout="inline"
+              layout="horizontal"
               className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto justify-center"
               onFinish={(values) => console.log('Newsletter signup:', values)}
             >

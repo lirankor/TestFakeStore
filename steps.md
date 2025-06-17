@@ -10,3 +10,6 @@ This is the work proccess used to create the project.
 8. import UI components and pages from replit AI to use in the project
 9. install react-query and use it in the project
 10. Creat reactQuery hooks seperated by model
+11. Added checkout semple
+12. Next: update logic to use zustand stores for reading states and react query for mutation and API calls.
+13. Next: add dummy coupon code functionality.

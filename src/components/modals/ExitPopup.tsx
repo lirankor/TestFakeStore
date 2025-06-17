@@ -34,7 +34,7 @@ export default function ExitPopup() {
       maskStyle={{ backdropFilter: 'blur(8px)' }}
     >
       <div className="text-center p-6">
-        <div className="w-16 h-16 bg-gradient-to-r from-red-500 to-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
+        <div className="w-16 h-16 bg-linear-to-r from-red-500 to-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
           <GiftOutlined className="text-white text-2xl" />
         </div>
         
@@ -66,7 +66,7 @@ export default function ExitPopup() {
               type="primary"
               htmlType="submit"
               size="large"
-              className="w-full bg-gradient-to-r from-red-500 to-pink-500 border-0 font-semibold"
+              className="w-full bg-linear-to-r from-red-500 to-pink-500 border-0 font-semibold"
             >
               Get My 15% Discount
             </Button>

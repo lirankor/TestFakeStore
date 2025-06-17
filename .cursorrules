@@ -7,7 +7,7 @@
 - React 19 + TypeScript
 - Vite build tool
 - Ant Design (antd) for UI components
-- **Tailwind CSS 4** for styling (with Vite plugin)
+- **Tailwind CSS 3** for styling (with PostCSS)
 - React Router DOM for routing
 - TanStack React Query for server state
 - Zustand for client state
@@ -163,15 +163,15 @@ export default function [Component]({ prop, className = '' }: [Component]Props) 
 }
 ```
 
-## 🎨 TAILWIND 4 STYLING GUIDELINES
+## 🎨 TAILWIND 3 STYLING GUIDELINES
 
-### Tailwind 4 + Ant Design Integration
+### Tailwind 3 + Ant Design Integration
 
-- Use **Tailwind 4 with Vite plugin** - no PostCSS configuration needed
-- Import syntax: `@import "tailwindcss";` in CSS files
+- Use **Tailwind 3 with PostCSS** - traditional setup
+- Import syntax: `@tailwind base; @tailwind components; @tailwind utilities;` in CSS files
 - Use Ant Design components for complex UI (forms, tables, modals)
-- Use Tailwind 4 for layout, spacing, and custom styling
-- **Reference**: https://tailwindcss.com/docs/installation/using-vite
+- Use Tailwind 3 for layout, spacing, and custom styling
+- **Reference**: https://tailwindcss.com/docs/installation
 - Combine classes: `className="ant-component-class custom-tailwind-classes"`
 - Use Ant Design's `App.useApp()` for notifications and modals
 
@@ -242,21 +242,21 @@ Our project uses a comprehensive glass morphism design system with:
 #### Animation Classes
 
 ```css
-.hover-scale        /* Scale on hover */
+.hover-scale         /* Scale on hover */
 /* Scale on hover */
 /* Scale on hover */
 /* Scale on hover */
 .floating-animation; /* Floating keyframe animation */
 ```
 
-### Tailwind 4 Configuration Integration
+### Tailwind 3 Configuration Integration
 
 Our `tailwind.config.ts` extends the theme with:
 
 - **Custom Colors**: All CSS variables mapped to Tailwind classes
 - **Border Radius**: Using CSS variables for consistent radius
 - **Animations**: accordion-down, accordion-up, floating
-- **Backdrop Blur**: Extended with `xs` variant
+- **Backdrop Blur**: Typography, animations, and line-clamp support
 
 ### CSS Class Patterns
 
@@ -264,7 +264,7 @@ Our `tailwind.config.ts` extends the theme with:
 - Glass morphism: `glass-effect`, `glass-card`, `nav-glass`
 - Gradients: `gradient-bg`, `gradient-secondary`, `text-gradient`
 - Responsive design: Always include responsive classes (`sm:`, `md:`, `lg:`)
-- Background patterns: `bg-gradient-to-br from-blue-50 via-purple-50 to-indigo-100`
+- Background patterns: `bg-linear-to-br from-blue-50 via-purple-50 to-indigo-100`
 
 ### Component Styling Conventions
 

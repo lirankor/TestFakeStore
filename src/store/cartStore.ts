@@ -8,9 +8,21 @@ export interface CartItem {
   product: Product;
 }
 
+enum CouponType {
+  PERCENTAGE = 'percentage',
+  FIXED = 'fixed',
+}
+
+interface Coupon {
+  code: string;
+  discount: number;
+  expiresAt: string;
+  couponType: CouponType;
+}
+
 interface CartClientState {
-  // Client-side state only
   items: CartItem[];
+  coupon?: Coupon;
   
   // Actions
   addItem: (product: Product, quantity: number) => void;
